@@ -1,5 +1,5 @@
-thads13 = read.csv('thads2013n.txt')
-thads11 = read.csv('thads2011.txt')
+thads13 = read.csv('thads/thads2013n.txt')
+thads11 = read.csv('thads/thads2011.txt')
 thads = merge(thads13, thads11, all=TRUE)
 thads = subset(thads, VALUE!=-6)
 thads = subset(thads, TOTSAL!=-9)
