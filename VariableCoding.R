@@ -41,12 +41,12 @@ thads$metro5 = ifelse(thads$METRO3==5, 1, 0)
 thads$metro9 = ifelse(thads$METRO3==9, 1, 0)
 
 # Structure Type
-thads$struc1 = ifelse(thads$STRUCTURETYPE==1)
-thads$struc2 = ifelse(thads$STRUCTURETYPE==2)
-thads$struc3 = ifelse(thads$STRUCTURETYPE==3)
-thads$struc4 = ifelse(thads$STRUCTURETYPE==4)
-thads$struc5 = ifelse(thads$STRUCTURETYPE==5)
-thads$struc6 = ifelse(thads$STRUCTURETYPE==6)
+thads$struc1 = ifelse(thads$STRUCTURETYPE==1, 1, 0)
+thads$struc2 = ifelse(thads$STRUCTURETYPE==2, 1, 0)
+thads$struc3 = ifelse(thads$STRUCTURETYPE==3, 1, 0)
+thads$struc4 = ifelse(thads$STRUCTURETYPE==4, 1, 0)
+thads$struc5 = ifelse(thads$STRUCTURETYPE==5, 1, 0)
+thads$struc6 = ifelse(thads$STRUCTURETYPE==6, 1, 0)
 
 # Tenure
 thads$tenure1 = ifelse(thads$TENURE==1, 1, 0)
