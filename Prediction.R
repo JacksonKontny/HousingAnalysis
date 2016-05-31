@@ -1,0 +1,35 @@
+prediction = data.frame(ABL80=c(.75 * 70746),
+    AGE1=26,
+    B2000s=1,
+    B90s=0,
+    B40s50s=0,
+    B60s70s=0,
+    B80s=0,
+    B2010s=0,
+    BEDRMS=1,
+    ROOMS_BEDS=3,
+    BEDRMS_SQ=1,
+    BED_PERSON=2,
+    ROOMS_PERSON=6,
+    home_age=15,
+    OTHERCOST=100,
+    PER=2,
+    PER_SQ=4,
+    ROOMS=3,
+    ROOMS_SQ=9,
+    struc1=1,
+    struc2=0,
+    struc3=0,
+    struc4=0,
+    struc5=0,
+    TOTSAL=150000,
+    TOTSAL_PERSON=300000,
+    UTILITY=200,
+    UTILITY_SQ=40000,
+    ZINC2=75000,
+    ZSMHC=300
+)
+predict(complete.model, prediction, interval="confidence", level=.95)
+
+# My Single apartment is predicted to be between 74000 and 92000 dollars.  
+# Seems a little low...
