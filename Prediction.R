@@ -1,4 +1,4 @@
-prediction = data.frame(ABL80=c(.75 * 70746),
+prediction = data.frame(ABL80=c(.8 * .75 * 70746 * 2),
     AGE1=26,
     B2000s=1,
     B90s=0,
@@ -31,5 +31,5 @@ prediction = data.frame(ABL80=c(.75 * 70746),
 )
 predict(complete.model, prediction, interval="confidence", level=.95)
 
-# My Single apartment is predicted to be between 74000 and 92000 dollars.  
-# Seems a little low...
+# My Single apartment is predicted to be between 34200 and 365000 dollars.  
+# Seems about right...
