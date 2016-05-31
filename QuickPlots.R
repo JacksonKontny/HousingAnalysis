@@ -1,4 +1,5 @@
 library(ggplot2)
+ggplot(data=thads, aes(x=home_age, y=VALUE)) + geom_point()
 # Linear
 ggplot(data=thads, aes(x=ZINC2, y=VALUE)) + geom_point()
 # Maybe Transformation will help
@@ -14,19 +15,17 @@ ggplot(data=thads, aes(x=NUNITS, y=VALUE)) + geom_point()
 ggplot(data=thads, aes(x=PER, y=VALUE)) + geom_point()
 # Linear, perhaps quadratic or even cubic!
 ggplot(data=thads, aes(x=ROOMS, y=VALUE)) + geom_point()
-ggplot(data=thads, aes(x=factor(ROOMS), y=VALUE)) + geom_boxplot()
 # Linear, perhaps quadratic or even cubic!
 ggplot(data=thads, aes(x=BEDRMS, y=VALUE)) + geom_point()
-ggplot(data=thads, aes(x=factor(BEDRMS), y=VALUE)) + geom_boxplot()
 # Linear
 ggplot(data=thads, aes(x=TOTSAL, y=VALUE)) + geom_point()
 # Linear or quadratic
 ggplot(data=thads, aes(x=UTILITY, y=VALUE)) + geom_point()
-ggplot(data=thads, aes(x=BUILT, y=VALUE)) + geom_point()
-# Linear or quadratic
-ggplot(data=thads, aes(x=factor(BUILT), y=VALUE)) + geom_boxplot()
-ggplot(data=thads, aes(x=METRO3, y=VALUE)) + geom_point()
-ggplot(data=thads, aes(x=factor(METRO3), y=VALUE)) + geom_violin()
-ggplot(data=thads, aes(x=factor(STRUCTURETYPE), y=VALUE)) + geom_boxplot()
 # Linear
 ggplot(data=thads, aes(x=ZSMHC, y=VALUE)) + geom_point()
+
+# Possible Quadratic Variables:
+# Rooms, Per, BEDRMS, UTILITY
+
+# Possible Transformation Variables:
+# IPOV, NUNITS, ROOMS, BEDRMS
