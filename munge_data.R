@@ -15,3 +15,4 @@ thads = subset(thads, TOTSAL!=-9)
 thads = subset(thads, ZSMHC!=-6)
 thads$home_age = thads$dataset_year - thads$BUILT
 save(thads, file='thads.Rda')
+#Testing
