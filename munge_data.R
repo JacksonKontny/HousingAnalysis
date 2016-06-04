@@ -1,8 +1,9 @@
 thads13 = read.csv('thads/thads2013n.txt')
 thads13$dataset_year = 2013
-thads11 = read.csv('thads/thads2011.txt')
-thads11$dataset_year = 2011
-thads = merge(thads13, thads11, all=TRUE)
+#thads11 = read.csv('thads/thads2011.txt') #This set will increase variability.  Use 2013 set only.
+#thads11$dataset_year = 2011
+#thads = merge(thads13, thads11, all=TRUE)
+thads = thads13
 thads = subset(thads, VALUE!=-6)
 thads = subset(thads, TOTSAL!=-9)
 thads = subset(thads, ZSMHC!=-6)
