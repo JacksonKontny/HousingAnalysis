@@ -16,16 +16,16 @@ set.seed(1)
 complete.model= lm(
   VALUE ~ ABL80 + 
     AGE1 +
-    B2000s +
-    B90s +
-    B40s50s + # What decade was the home built
-    B60s70s +
-    B80s +
-    B2010s +
+#    B2000s +
+#    B90s +
+#    B40s50s + # What decade was the home built
+#    B60s70s +
+#    B80s +
+#    B2010s +
     BEDRMS +
     ROOMS_BEDS +
-    BEDRMS_SQ +
-    BED_PERSON +
+#    BEDRMS_SQ + #Revomed due to high p-value
+#    BED_PERSON + #Revomed due to high p-value
     ROOMS_PERSON +
     home_age +
     OTHERCOST +
@@ -34,7 +34,7 @@ complete.model= lm(
     ROOMS +
     ROOMS_SQ +
     struc1 +
-    struc2 +
+#    struc2 + #Revomed due to high p-value
     struc3 +
     struc4 +
     struc5 +
@@ -45,6 +45,8 @@ complete.model= lm(
     ZINC2 +
     ZSMHC, data=thads
 )
+#Check for overall Adjusted R-squared
+summary(complete.model)
 
 sample = sample(1:nrow(thads), train.percent * nrow(thads))
 train = thads[sample,]
