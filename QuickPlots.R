@@ -3,7 +3,7 @@ ggplot(data=thads, aes(x=home_age, y=VALUE)) + geom_point()
 # Linear
 ggplot(data=thads, aes(x=ZINC2, y=VALUE)) + geom_point()
 # Maybe Transformation will help
-ggplot(data=thads, aes(x=IPOV, y=VALUE)) + geom_point()
+ggplot(data=thads, aes(x=IPOV, y=VALUE)) +ui geom_point()
 # Linear
 ggplot(data=thads, aes(x=APLMED, y=VALUE)) + geom_point()
 # Piecewise Linear ( 1 - 30 and 30 - 75 and 75 onward)
