@@ -28,16 +28,10 @@ shinyUI(fluidPage(
       
       br(),
       h2("Research question"),
-      p("Can the 31 parameters selected be used to successfully predict housing value with a confidence interval greater than ",
-        strong("80%"),
-        "?"),
       
       
       br(),
       h2("Independent variables"),
-      p("Can the 31 parameters selected be used to successfully predict housing value with a confidence interval greater than ",
-        strong("80%"),
-        "?"),
       
       
       br(),
