@@ -1,6 +1,3 @@
-# HousingAnalysis
-Analysis of American Housing Survey: Housing Affordability Data System: https://www.huduser.gov/portal/datasets/hads/hads.html
-
 When looking at the R code, please load and run the files in this order:
 
 1. munge_data
@@ -12,4 +9,4 @@ When looking at the R code, please load and run the files in this order:
 7. InteractionTerms
 8. Evaluation
 9. Prediction
-10.Improved_model
+10. Improved_model
