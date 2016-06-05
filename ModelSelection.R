@@ -68,5 +68,5 @@ stepwise.model = step(full.model, direction='both')
 # all.possible.model=regsubsets(x=thads[,xvars], y=thads[,yvar], names=xvars, nbest=1)
 
 
-ZSMHC + ABL80 + AGE1 + ZINC2 + APLMED + GL30 + TOTSAL + 
-  OTHERCOST + ABL30 + ABLMED
+#ZSMHC + ABL80 + AGE1 + ZINC2 + APLMED + GL30 + TOTSAL + 
+#  OTHERCOST + ABL30 + ABLMED
