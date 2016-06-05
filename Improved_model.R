@@ -4,9 +4,6 @@ complete.model= lm(
     AGE1 + 
     APLMED +
     B40s50s + 
-    B60s70s +   
-    B80s +    
-    B90s +
     B2000s +
     B2010s + 
     BEDRMS + 
@@ -33,9 +30,6 @@ prediction = data.frame(ABL80= (.8 * .75 * 70746),
                         AGE1=26,
                         APLMED= (.75 * 70746),
                         B40s50s=0, 
-                        B60s70s=1,  
-                        B80s=0, 
-                        B90s=0,                        
                         B2000s=0,
                         B2010s=0,
                         BEDRMS=1,
