@@ -41,45 +41,41 @@ shinyUI(fluidPage(
       
       
       br(),
-      h2("Dependent variable"),
-      p("Can the 31 parameters selected be used to successfully predict housing value with a confidence interval greater than ",
-        strong("80%"),
-        "?"),
+      h2("Dependent Variable"),
       
       
       br(),
       h2("Quantitative vs. Qualitative"),
-      p("Can the 31 parameters selected be used to successfully predict housing value with a confidence interval greater than ",
-        strong("80%"),
-        "?"),
       
       
       br(),
-      h2("Research question"),
-      p("Can the 31 parameters selected be used to successfully predict housing value with a confidence interval greater than ",
-        strong("80%"),
-        "?"),
+      h2("Correlation and Scatter plots"),
       
       
       br(),
-      h2("Research question"),
-      p("Can the 31 parameters selected be used to successfully predict housing value with a confidence interval greater than ",
-        strong("80%"),
-        "?"),
+      h2("The search for a model"),
       
       
       br(),
-      h2("Research question"),
-      p("Can the 31 parameters selected be used to successfully predict housing value with a confidence interval greater than ",
-        strong("80%"),
-        "?"),
+      h2("Transformations"),
       
       
       br(),
-      h2("Research question"),
-      p("Can the 31 parameters selected be used to successfully predict housing value with a confidence interval greater than ",
-        strong("80%"),
-        "?")
+      h2("Checking of assumptions"),
+      
+      br(),
+      h2("Model validation"),
+      
+      br(),
+      h2("Prediction"),
+      
+      br(),
+      h2("Conclusion"),
+      p("Since the Department of Housing and Urban Development did not include the 
+        date of each observation in the data set, our prediction does not take into 
+        account of the seasonal variation in the real estate market.  Below was the 
+        actual fluctuation of the median sales price in Chicago for a 2-bedroom.  
+        Median prices ranged from $115,000 to $158,000.")
     )
   )
   ))
