@@ -1,4 +1,4 @@
-# Since ABL80 contributes the most of ABL##, APL, GL## (highest AIC), IPOV (all of which are correlated) we can remove the colinear variables to simplify the model
+  # Since ABL80 contributes the most of ABL##, APL, GL## (highest AIC), IPOV (all of which are correlated) we can remove the colinear variables to simplify the model
 # Since PER is heavily correlated with IPOV, we can maybe remove PER
 # Since BEDRMS is heavily correlated with ROOMS, we can remove BEDRMS to simplify the model
 # Because of our interaction terms and higher order terms, we will not remove PER or BEDRMS
@@ -14,7 +14,8 @@ test.percent = .30
 set.seed(1)
 
 complete.model= lm(
-  VALUE ~ ABL80 + 
+  VALUE ~ 
+    ABL80 + 
     AGE1 +
 #    B2000s +
 #    B90s +
