@@ -1,13 +1,12 @@
 shinyUI(fluidPage(
   titlePanel("Predicting Home Price"),
+  p("By: Jackson Kontny, Thomas Nuegyn, Daniel Glownia"),
+  br(),
   sidebarLayout(
-    sidebarPanel(
-      h3("CSC 465"),
-      p("By: Jackson Kontny, Thomas Nuegyn, Daniel Glownia"),
-      br()
-      #img(src = "house-011.jpg", height = 72, width = 72),
-      #"shiny is a product of ", 
-      #span("RStudio", style = "color:blue")
+    navlistPanel(
+      tabPanel("First"),
+      tabPanel("Second"),
+      tabPanel("Third")
     ),
     mainPanel(
       h2("Data Source"),
@@ -28,6 +27,9 @@ shinyUI(fluidPage(
       
       br(),
       h2("Research question"),
+      p("Can the 31 parameters selected be used to successfully predict housing value with a confidence interval greater than ",
+        strong("80%"),
+        "?"),
       
       
       br(),
@@ -62,6 +64,28 @@ shinyUI(fluidPage(
       
       br(),
       h2("Prediction"),
+      fluidRow(
+        
+        column(1, 
+               numericInput("num", 
+                            label = h5("Numeric input"), 
+                            value = 1)),   
+        
+        column(1, 
+               numericInput("num", 
+                            label = h5("Numeric input"), 
+                            value = 1)),   
+        
+        column(1, 
+               numericInput("num", 
+                            label = h5("Numeric input"), 
+                            value = 1)),   
+        
+        column(1, 
+               numericInput("num", 
+                            label = h5("Numeric input"), 
+                            value = 1))  
+      ),
       
       br(),
       h2("Conclusion"),
