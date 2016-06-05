@@ -50,7 +50,7 @@ complete.model= lm(
 summary(complete.model)
 
 vif(complete.model)
-#vif are too high for a number of variables.  Interacton terms ROOMS_SQ and ROOMS_BEDS have to be dropped.
+#vif are too high for a number of variables.  Multicollinearity is high.  Interacton terms ROOMS_SQ and ROOMS_BEDS have to be dropped.
 
 sample = sample(1:nrow(thads), train.percent * nrow(thads))
 train = thads[sample,]
