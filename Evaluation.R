@@ -49,6 +49,9 @@ complete.model= lm(
 #Check for overall Adjusted R-squared
 summary(complete.model)
 
+vif(complete.model)
+#vif are too high for a number of variables.  Multicollinearity is high.  Interacton terms ROOMS_SQ and ROOMS_BEDS have to be dropped.
+
 sample = sample(1:nrow(thads), train.percent * nrow(thads))
 train = thads[sample,]
 test = thads[-sample,]
