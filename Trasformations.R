@@ -18,9 +18,15 @@ partial = lm(VALUE ~ NUNITS, data=thads)
 anova(full, partial)
 summary(full)
 
-# INV NUNITS - Inverse does not improve model
+# INV NUNITS - Inverse does not improve model enough
 thads$NUNITS_INV = 1/thads$NUNITS
 full = lm(VALUE ~ NUNITS_INV + NUNITS, data=thads)
+partial = lm(VALUE ~ NUNITS, data=thads)
+anova(full, partial)
+
+# INV home_age - Inverse does not improve model enough
+thads$home_age_INV = 1/thads$home_age
+full = lm(VALUE ~ home_age_INV + NUNITS, data=thads)
 partial = lm(VALUE ~ NUNITS, data=thads)
 anova(full, partial)
 
@@ -48,18 +54,9 @@ full = lm(VALUE ~ UTILITY + UTILITY_SQ, data=thads)
 partial = lm(VALUE ~ UTILITY, data=thads)
 anova(full, partial)
 
-# SQRT IPOV - adding sqrt term will imrpove the model, but the Adj RSQ is still low
+# SQRT IPOV - adding sqrt term will imrpove the model, but the Adj RSQ is too low
 thads$IPOV_SQRT = sqrt(thads$IPOV)
 full = lm(VALUE ~ IPOV_SQRT + IPOV, data=thads)
 partial = lm(VALUE ~ IPOV, data=thads)
 anova(full, partial)
 summary(full)
-
-# INV IPOV - Inverse improves model more than sqrt (comparing adj rsq)
-thads$IPOV_INV = 1/thads$IPOV
-full = lm(VALUE ~ IPOV_INV + IPOV, data=thads)
-partial = lm(VALUE ~ IPOV, data=thads)
-anova(full, partial)
-summary(full)
-
-fit = lm(VALUE ~ )
