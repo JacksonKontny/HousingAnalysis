@@ -1,12 +1,10 @@
 shinyUI(fluidPage(
   titlePanel("Predicting Home Price"),
-  p("By: Jackson Kontny, Thomas Nuegyn, Daniel Glownia"),
-  br(),
   sidebarLayout(
-    navlistPanel(
-      tabPanel("First"),
-      tabPanel("Second"),
-      tabPanel("Third")
+    sidebarPanel(
+      h3("CSC 465"),
+      p("By: Jackson Kontny, Thomas Nuegyn, Daniel Glownia"),
+      br()
     ),
     mainPanel(
       h2("Data Source"),
@@ -34,36 +32,33 @@ shinyUI(fluidPage(
       
       br(),
       h2("Independent variables"),
+      p(" AGE1 --  Age of head of household"),
+      p( "APLMED -- Median Income Adjusted for # of Persons"),
+      p("BEDRMS --# of Bedrooms in unit"),
+      p(" BUILT --  Year unit was built"),
+      p("IPOV-- Poverty Income"),
+      p("METRO3 -- Central City / Suburban Status"),
+      p("NUNITS -- # of units in building"),
+      p("PER -- # of persons in household"),
+      p("ROOMS -- # of rooms in unit"),
+      p("STRUCTURETYPE -- Recoded structure type "),
+      p("ZINC2 -- Household Income "),
+      p("ZSMHC -- Monthly housing costs "),
       
       
       br(),
       h2("Dependent Variable"),
-      
-      
-      br(),
-      h2("Quantitative vs. Qualitative"),
-      
+      p("We selected VALUE as our dependent variable.  From Table 1, VALUE is 
+        the current market value of the unit in the survey.  We were interested 
+        in predicting unit market value for practical purposes. "),
       
       br(),
-      h2("Correlation and Scatter plots"),
+      h2("Model Prediction"),
+      p("In 2013, for a typical 2-bedroom, 6 rooms unit, 26-year-old tenant’s income at $70,746, built in the 70s, monthly utility bill at $40:
+        At 95% level of confident 
+        Predicted value = $131,929 
+        [$111,942,  $150,885]"),
       
-      
-      br(),
-      h2("The search for a model"),
-      
-      
-      br(),
-      h2("Transformations"),
-      
-      
-      br(),
-      h2("Checking of assumptions"),
-      
-      br(),
-      h2("Model validation"),
-      
-      br(),
-      h2("Prediction"),
       fluidRow(
         
         column(1, 
