@@ -7,7 +7,6 @@ complete.model= lm(
     B2000s +
     B2010s + 
     BEDRMS + 
-    PER +
     PER_SQ +
     ROOMS +
     struc1 + 
@@ -34,7 +33,6 @@ prediction = data.frame(
   B2000s=0,
   B2010s=0,
   BEDRMS=1,
-  PER=1,
   PER_SQ=1,
   ROOMS = 5,
   struc1=0,
