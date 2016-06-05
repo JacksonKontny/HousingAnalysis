@@ -2,7 +2,6 @@ complete.model= lm(
   VALUE ~ 
     ABL80 + 
     AGE1 + 
-    APLMED +
     B40s50s + 
     B2000s +
     B2010s + 
@@ -28,13 +27,12 @@ vif(complete.model)
 prediction = data.frame(
   ABL80= (.8 * .75 * 70746),
   AGE1=26,
-  APLMED= (.75 * 70746),
   B40s50s=0, 
   B2000s=0,
   B2010s=0,
-  BEDRMS=1,
+  BEDRMS = 2,
   PER_SQ=1,
-  ROOMS = 5,
+  ROOMS = 6,
   struc1=0,
   struc3=1,
   struc4=0,
