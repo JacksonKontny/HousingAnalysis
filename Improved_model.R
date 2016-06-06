@@ -69,7 +69,6 @@ model1= lm(
     struc5 + 
     TOTSAL +     
     UTILITY + 
-    UTILITY +    
     ZINC2 + 
     ZSMHC, 
   data = sample1
@@ -90,7 +89,6 @@ model2= lm(
     struc5 + 
     TOTSAL +     
     UTILITY + 
-    UTILITY +    
     ZINC2 + 
     ZSMHC, 
   data = sample2
@@ -133,5 +131,48 @@ if (pvalue < alpha) {
 
 
 #outliers and influential observations
-standardized.residuals = rstandard(model)
+standardized.residuals = rstandard(m)
 print(standardized.residuals)
+
+plot(thads$ABL80, standardized.residuals, main="Standardized Residuals vs. ABL80", xlab="ABL80", ylab="Standardized residuals", col="blue", lwd=2)
+abline(h=0, col="red", lwd=2, lty=2)
+
+plot(thads$B40s50s, standardized.residuals, main="Standardized Residuals vs. B40s50s", xlab="B40s50s", ylab="Standardized residuals", col="blue", lwd=2)
+abline(h=0, col="red", lwd=2, lty=2)
+
+plot(thads$B2000s, standardized.residuals, main="Standardized Residuals vs. B2000s", xlab="B2000s", ylab="Standardized residuals", col="blue", lwd=2)
+abline(h=0, col="red", lwd=2, lty=2)
+
+plot(thads$B2010s, standardized.residuals, main="Standardized Residuals vs. B2010s", xlab="B2010s", ylab="Standardized residuals", col="blue", lwd=2)
+abline(h=0, col="red", lwd=2, lty=2)
+
+plot(thads$BEDRMS, standardized.residuals, main="Standardized Residuals vs. BEDRMS", xlab="BEDRMS", ylab="Standardized residuals", col="blue", lwd=2)
+abline(h=0, col="red", lwd=2, lty=2)
+
+plot(thads$PER, standardized.residuals, main="Standardized Residuals vs. PER", xlab="PER", ylab="Standardized residuals", col="blue", lwd=2)
+abline(h=0, col="red", lwd=2, lty=2)
+
+plot(thads$struc1, standardized.residuals, main="Standardized Residuals vs. struc1", xlab="struc1", ylab="Standardized residuals", col="blue", lwd=2)
+abline(h=0, col="red", lwd=2, lty=2)
+
+plot(thads$struc3, standardized.residuals, main="Standardized Residuals vs. struc3", xlab="struc3", ylab="Standardized residuals", col="blue", lwd=2)
+abline(h=0, col="red", lwd=2, lty=2)
+
+plot(thads$struc4, standardized.residuals, main="Standardized Residuals vs. struc4", xlab="struc4", ylab="Standardized residuals", col="blue", lwd=2)
+abline(h=0, col="red", lwd=2, lty=2)
+
+plot(thads$struc5, standardized.residuals, main="Standardized Residuals vs. struc5", xlab="struc5", ylab="Standardized residuals", col="blue", lwd=2)
+abline(h=0, col="red", lwd=2, lty=2)
+
+plot(thads$TOTSAL, standardized.residuals, main="Standardized Residuals vs. TOTSAL", xlab="TOTSAL", ylab="Standardized residuals", col="blue", lwd=2)
+abline(h=0, col="red", lwd=2, lty=2)
+
+plot(thads$UTILITY, standardized.residuals, main="Standardized Residuals vs. UTILITY", xlab="UTILITY", ylab="Standardized residuals", col="blue", lwd=2)
+abline(h=0, col="red", lwd=2, lty=2)
+
+plot(thads$ZINC2, standardized.residuals, main="Standardized Residuals vs. ZINC2", xlab="ZINC2", ylab="Standardized residuals", col="blue", lwd=2)
+abline(h=0, col="red", lwd=2, lty=2)
+
+plot(thads$ZSMHC, standardized.residuals, main="Standardized Residuals vs. ZSMHC", xlab="ZSMHC", ylab="Standardized residuals", col="blue", lwd=2)
+abline(h=0, col="red", lwd=2, lty=2)
+
