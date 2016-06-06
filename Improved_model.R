@@ -20,6 +20,31 @@ m = lm(
 )
 summary(m)
 
+vif(complete.model)
+#Vifs are acceptable.
+
+prediction = data.frame(
+  ABL80= (.8 * .75 * 70746),
+  AGE1=26,
+  B40s50s=0, 
+  B2000s=0,
+  B2010s=0,
+  BEDRMS = 2,
+  PER_SQ=1,
+  ROOMS = 6,
+  struc1=0,
+  struc3=1,
+  struc4=0,
+  struc5=0,
+  TOTSAL=70746,
+  TOTSAL_PERSON=70746,
+  UTILITY=40,
+  UTILITY_SQ=1600,
+  ZINC2=70746,
+  ZSMHC=1100
+)
+predict(complete.model, prediction, interval="confidence", level=.95)
+
 
 # Heteroscedasticity
 alpha = .05
@@ -105,34 +130,6 @@ if (pvalue < alpha) {
 }
 
 
-
-
-
-
-vif(complete.model)
-#Vifs are acceptable.
-
-prediction = data.frame(
-  ABL80= (.8 * .75 * 70746),
-  AGE1=26,
-  B40s50s=0, 
-  B2000s=0,
-  B2010s=0,
-  BEDRMS = 2,
-  PER_SQ=1,
-  ROOMS = 6,
-  struc1=0,
-  struc3=1,
-  struc4=0,
-  struc5=0,
-  TOTSAL=70746,
-  TOTSAL_PERSON=70746,
-  UTILITY=40,
-  UTILITY_SQ=1600,
-  ZINC2=70746,
-  ZSMHC=1100
-)
-predict(complete.model, prediction, interval="confidence", level=.95)
 
 
 #outliers and influential observations
