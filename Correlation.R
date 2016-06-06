@@ -11,8 +11,6 @@ possible.correlated.vars = c('ABL30', 'ABL50', 'ABL80', 'ABLMED', 'APLMED', 'B20
           'L30','L50','L80','LMED','OTHERCOST','PER', 'ROOMS', 'struc1','struc2',
           'struc3','struc4','struc5','struc6','TOTSAL','UTILITY','ZINC2','ZSMHC')
 
-new.possible.correlated.vars = c('ZSMHC', 'ABL80', 'AGE1', 'ZINC2', 'APLMED', 'GL30', 'TOTSAL', 
-                                 'OTHERCOST', 'ABL30', 'ABLMED')
 thads.data = thads[,new.possible.correlated.vars]
 cor(thads.data)
 # It looks like variables removed by ModelSelection were not significantly correlated with any other variables.  We can be comfortable that they

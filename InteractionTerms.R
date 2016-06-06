@@ -14,7 +14,8 @@ plot(effect("PER:BEDRMS", fit,, list(wt=c(mean-sd, mean, mean+sd))), multiline=T
 thads$BED_PERSON = thads$PER * thads$BEDRMS
 full = lm(VALUE ~ BED_PERSON + BEDRMS + PER, data=thads)
 reduced = lm(VALUE ~ BEDRMS + PER, data=thads)
-anova(full, reduced)
+summary(full)
+summary(reduced)
 
 # Plot effects of Person and Rooms
 fit = lm(VALUE ~ PER + ROOMS + PER:ROOMS, data=thads)
@@ -26,7 +27,8 @@ plot(effect("PER:ROOMS", fit,, list(wt=c(mean-sd, mean, mean+sd))), multiline=TR
 thads$ROOMS_PERSON = thads$ROOMS * thads$PER
 full = lm(VALUE ~ ROOMS_PERSON + ROOMS + PER, data=thads)
 reduced = lm(VALUE ~ ROOMS + PER, data=thads)
-anova(full, reduced)
+summary(full)
+summary(reduced)
 
 # TOTSAL * Persons is a useful interaction term
 fit = lm(VALUE ~ PER + TOTSAL + PER:TOTSAL, data=thads)
@@ -37,7 +39,8 @@ plot(effect("PER:TOTSAL", fit,, list(wt=c(mean-sd, mean, mean+sd))), multiline=T
 thads$TOTSAL_PERSON = thads$TOTSAL * thads$PER
 full = lm(VALUE ~ TOTSAL_PERSON + TOTSAL + PER, data=thads)
 reduced = lm(VALUE ~ TOTSAL + PER, data=thads)
-anova(full, reduced)
+summary(full)
+summary(reduced)
 
 # Rooms * BEDS is a useful interaction term, lets keep them both
 thads$BEDRMS_ROOMS = thads$ROOMS * thads$BEDRMS
@@ -49,7 +52,8 @@ plot(effect("ROOMS:BEDRMS", fit,, list(wt=c(mean-sd, mean, mean+sd))), multiline
 thads$ROOMS_BEDS = thads$ROOMS * thads$BEDRMS
 full = lm(VALUE ~ BEDRMS + ROOMS + ROOMS_BEDS, data=thads)
 reduced = lm(VALUE ~ BEDRMS + ROOMS, data=thads)
-anova(full, reduced)
+summary(full)
+summary(reduced)
 
 
 

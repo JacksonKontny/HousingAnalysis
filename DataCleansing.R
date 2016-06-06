@@ -21,11 +21,11 @@
   thads = subset(thads, ZSMHC!=-6)
   
   # Outliers - We could remove these, but we can't say why they exist
-  # sqldf("SELECT DISTINCT VALUE FROM thads WHERE VALUE > 2500000")
-  # sqldf("SELECT COUNT(*) FROM thads WHERE VALUE = 2520000")
-  # sqldf("SELECT COUNT(*) FROM thads WHERE VALUE BETWEEN 1000000 AND 1500000")
-  # sqldf("SELECT COUNT(*) VALUE FROM thads WHERE VALUE > 300000")
-  # thads = subset(thads, VALUE <= 300000)
+   sqldf("SELECT DISTINCT VALUE FROM thads WHERE VALUE > 2500000")
+   sqldf("SELECT COUNT(*) FROM thads WHERE VALUE = 2520000")
+   sqldf("SELECT COUNT(*) FROM thads WHERE VALUE BETWEEN 1000000 AND 1500000")
+   sqldf("SELECT COUNT(*) VALUE FROM thads WHERE VALUE > 300000")
+   thads = subset(thads, VALUE <= 300000)
   
   thads$home_age = thads$dataset_year - thads$BUILT
   save(thads, file='thads.Rda')

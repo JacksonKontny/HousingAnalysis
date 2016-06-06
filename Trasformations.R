@@ -1,3 +1,4 @@
+require(ggplot2)
 #Transformations
 # From Quick Plots:
 # Possible Quadratic Variables:
@@ -6,57 +7,75 @@
 # Possible Transformation Variables:
 # IPOV, NUNITS
 
-# It appears the log term is not a useful predictor
-thads$LOG_NUNITS = log(-1 * thads$NUNITS)
-fit = lm(VALUE ~ EXP_NUNITS, data=thads)
-summary(fit)
+# SQRT NUNITS - sqrt transformation does not improve model
+NUNITS_SQRT = sqrt(thads$NUNITS)
+thads = cbind(thads, NUNITS_SQRT)
+ggplot(data=thads, aes(x=NUNITS_SQRT, y=VALUE)) + geom_point() +
+  xlab('Square Root of Number of Units')+
+  ylab('Value of Unit') +
+  ggtitle('Square Root of Number Of Units vs. Value')
+tranformed = lm(VALUE ~ NUNITS_SQRT, data=thads)
+regular = lm(VALUE ~ NUNITS, data=thads)
+summary(transformed)
+summary(regular)
 
-# SQRT NUNITS - sqrt transformation will imrpove the model, but not enough
-thads$NUNITS_SQRT = sqrt(thads$NUNITS)
-full = lm(VALUE ~ NUNITS_SQRT + NUNITS, data=thads)
-partial = lm(VALUE ~ NUNITS, data=thads)
-anova(full, partial)
-summary(full)
-
-# INV NUNITS - Inverse does not improve model enough
+# INV NUNITS - Inverse does not improve model
 thads$NUNITS_INV = 1/thads$NUNITS
-full = lm(VALUE ~ NUNITS_INV + NUNITS, data=thads)
-partial = lm(VALUE ~ NUNITS, data=thads)
-anova(full, partial)
+ggplot(data=thads, aes(x=NUNITS_INV, y=VALUE)) + geom_point() +
+  xlab('Inverse of Number of Units')+
+  ylab('Value of Unit') +
+  ggtitle('Inverse of Number Of Units vs. Value')
+transformed = lm(VALUE ~ NUNITS_INV, data=thads)
+regular = lm(VALUE ~ NUNITS, data=thads)
+summary(transformed)
+summary(regular)
 
-# INV home_age - Inverse does not improve model enough
+# INV home_age - Inverse does not improve model
 thads$home_age_INV = 1/thads$home_age
-full = lm(VALUE ~ home_age_INV + NUNITS, data=thads)
-partial = lm(VALUE ~ NUNITS, data=thads)
-anova(full, partial)
+ggplot(data=thads, aes(x=home_age_INV, y=VALUE)) + geom_point() +
+  xlab('Inverse Age of Unit')+
+  ylab('Value of Unit') +
+  ggtitle('Inverse Age Of Unit vs. Value')
+transformed = lm(VALUE ~ NUNITS_INV, data=thads)
+regular = lm(VALUE ~ NUNITS, data=thads)
+summary(transformed)
+summary(regular)
+
+# SQRT IPOV - adding sqrt term will imrpove the model!
+thads$IPOV_SQRT = sqrt(thads$IPOV)
+ggplot(data=thads, aes(x=home_age_INV, y=VALUE)) + geom_point() +
+  xlab('Square Root of Poverty Income')+
+  ylab('Value of Unit') +
+  ggtitle('Square Root of Poverty Income vs. Value')
+transformed = lm(VALUE ~ IPOV_SQRT, data=thads)
+regular = lm(VALUE ~ IPOV, data=thads)
+summary(transformed)
+summary(regular)
 
 # Quadratic PER - Looks like quadratic term improves model
 thads$PER_SQ = thads$PER^2
 full = lm(VALUE ~ PER + PER_SQ, data=thads)
 partial = lm(VALUE ~ PER, data=thads)
-anova(full, partial)
+summary(full)
+summary(partial)
 
 # Quadratic Rooms - adding quadratic term will improve model
 thads$ROOMS_SQ = thads$ROOMS^2
 full = lm(VALUE ~ ROOMS + ROOMS_SQ, data=thads)
 partial = lm(VALUE ~ ROOMS, data=thads)
-anova(full, partial)
+summary(full)
+summary(partial)
 
 # Quadratic Bedrooms - adding quadratic term will improve model
 thads$BEDRMS_SQ = thads$BEDRMS^2
 full = lm(VALUE ~ BEDRMS + BEDRMS_SQ, data=thads)
 partial = lm(VALUE ~ BEDRMS, data=thads)
-anova(full, partial)
+summary(full)
+summary(partial)
 
 # Quadratic UTILITY - adding quadratic term will improve model
 thads$UTILITY_SQ = thads$UTILITY^2
 full = lm(VALUE ~ UTILITY + UTILITY_SQ, data=thads)
 partial = lm(VALUE ~ UTILITY, data=thads)
-anova(full, partial)
-
-# SQRT IPOV - adding sqrt term will imrpove the model, but the Adj RSQ is too low
-thads$IPOV_SQRT = sqrt(thads$IPOV)
-full = lm(VALUE ~ IPOV_SQRT + IPOV, data=thads)
-partial = lm(VALUE ~ IPOV, data=thads)
-anova(full, partial)
 summary(full)
+summary(partial)

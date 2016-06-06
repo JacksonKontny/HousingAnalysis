@@ -6,9 +6,6 @@
 # ZSMHC, ZINC2, UTILITY, TOTSAL, struc#, ROOMS, OTHERCOST, BDecade, home_age, and age are not colinear
 # ABL##, APL, BEDRMS, ROOMS GL##, IPOV, PER all contribute redundant information
 
-n = 1000
-mean = 10
-sd = 1
 train.percent = .70
 test.percent = .30
 set.seed(1)
@@ -19,16 +16,15 @@ complete.model= lm(
     AGE1 +
 #    B2000s +
 #    B90s +
-#    B40s50s + # What decade was the home built
-#    B60s70s +
+    B40s50s + # What decade was the home built
+    B60s70s +
 #    B80s +
 #    B2010s +
     BEDRMS +
-    ROOMS_BEDS +
-#    BEDRMS_SQ + #Revomed due to high p-value
-#    BED_PERSON + #Revomed due to high p-value
-    ROOMS_PERSON +
-    home_age +
+#    BEDRMS_SQ + # Revomed due to high p-value
+    BEDRMS_ROOMS +
+    IPOV_SQRT +
+#    home_age +
     OTHERCOST +
     PER +
     PER_SQ +
@@ -40,7 +36,6 @@ complete.model= lm(
     struc4 +
     struc5 +
     TOTSAL +
-    TOTSAL_PERSON +
     UTILITY +
     UTILITY_SQ +
     ZINC2 +
