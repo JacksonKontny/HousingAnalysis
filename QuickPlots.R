@@ -7,10 +7,6 @@ ggplot(data=thads, aes(x=ABLMED, y=VALUE)) + geom_point() +
   ggtitle('Income Adjusted for # of Bedrooms (ABLMED) vs. Value')
 
 # Linear
-ggplot(data=thads, aes(x=LMED, y=VALUE)) + geom_point() +
-  xlab('Average Income Adjusted')+
-  ylab('Value of Unit') +
-  ggtitle('Average Income Adjusted by HUD vs. Value')
 
 # Linear
 ggplot(data=thads, aes(x=AGE1, y=VALUE)) + geom_point() +
@@ -23,19 +19,6 @@ ggplot(data=thads, aes(x=factor(BEDRMS), y=VALUE)) + geom_boxplot() +
   xlab('Number Of Bed Rooms')+
   ylab('Value of Unit') +
   ggtitle('Number of Bedrooms (BEDRMS) vs. Value')
-
-# Linear
-<<<<<<< HEAD
-ggplot(data=thads, aes(x=ZINC2, y=VALUE)) + geom_point()
-# Maybe Transformation will help
-ggplot(data=thads, aes(x=IPOV, y=VALUE)) +ui geom_point()
-=======
-ggplot(data=thads, aes(x=factor(home_age), y=VALUE)) + geom_boxplot() + 
-  xlab('Age of Home in Years')+
-  ylab('Value of Unit') +
-  ggtitle('Home Age vs. Value')
-
->>>>>>> origin/master
 # Linear
 ggplot(data=thads, aes(x=ZINC2, y=VALUE)) + geom_point() +
 xlab('Household Income')+
